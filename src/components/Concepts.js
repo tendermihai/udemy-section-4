@@ -1,10 +1,9 @@
-import Concepts from "./components/Concepts";
-import componentsImage from "./assets/images/components.png";
-import stateImage from "./assets/images/state.png";
-import eventsImage from "./assets/images/events.png";
-import Header from "./components/Header";
+import React from "react";
+import componentsImage from "../assets/images/components.png";
+import stateImage from "../assets/images/state.png";
+import eventsImage from "../assets/images/events.png";
 
-function App() {
+const Concepts = (props) => {
   const concepts = [
     {
       title: "Components",
@@ -25,28 +24,16 @@ function App() {
         "Event handlers are added via props to (built-in) components. You pass functions as values to such event handlers to control which functions gets executed for which event.",
     },
   ];
+
   return (
     <>
-      <Header />
-      <ul id="concepts">
-        <Concepts
-          image={concepts[0].image}
-          title={concepts[0].title}
-          description={concepts[0].description}
-        />
-        <Concepts
-          image={concepts[1].image}
-          title={concepts[1].title}
-          description={concepts[1].description}
-        />
-        <Concepts
-          image={concepts[2].image}
-          title={concepts[2].title}
-          description={concepts[2].description}
-        />
-      </ul>
+      <li className="concept">
+        <img src={props.image} alt={props.title} />
+        <h2>TODO: {props.title}</h2>
+        <p>TODO: {props.description}</p>
+      </li>
     </>
   );
-}
+};
 
-export default App;
+export default Concepts;
